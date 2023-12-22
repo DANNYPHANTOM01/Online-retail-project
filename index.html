@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Retail System</title>
+</head>
+<body>
+    <h1>Welcome to the Online Retail System</h1>
+    <p>This is a simple online retail system built with Flask and Python.</p>
+    <p>
+        {% if session.username %}
+            Welcome, {{ session.username }}! (<a href="{{ url_for('logout') }}">Logout</a>)
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+    </p>
+    <p><a href="{{ url_for('catalog') }}">View Catalog</a></p>
+</body>
+</html>
